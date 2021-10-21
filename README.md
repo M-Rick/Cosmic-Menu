@@ -5,8 +5,6 @@ The Cosmic Menu script will bring a global menu on top of the screen in the Pop!
 All previous existing settings will be kept.
 The global menu uses Budgie Panel and brings most of the features avaible in Budgie.
 
-The second script Cosmic Desktop brings more advanced settings with a litte more customization.
-
 Don't forget to save all your desktop configuration first with ```dconf dump / > dconf-settings.ini```.
 
 To disable the global menu, just remove the startup desktop file ```sudo rm -f /etc/xdg/autostart/budgie-panel.desktop```
