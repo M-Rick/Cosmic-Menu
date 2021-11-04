@@ -28,7 +28,7 @@ Exposé features:
 - F3 : Toggle Workspace overview
 - F4 : Toggle applications Launchpad overview
 - F11 : Hide applications and show desktop
-- <SHIFT> F11 : Toggle fullscreen
+- \<SHIFT> F11 : Toggle fullscreen
 
 Enjoy!
 
