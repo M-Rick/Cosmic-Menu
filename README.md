@@ -20,10 +20,10 @@ Installation: ```sudo sh 'Cosmic Menu.sh' ```
 This script adds macOS keybindings in Pop!_OS and Nautilus.
 The keyboard is set to map French macOS keyboards. This can be changed later or the just comment ```#``` the line to keep your settings. To change the language just replace *fr* with your language code.
 Control and Command keys are inverted to bring the CTRL shortcuts behaviour back to the Command key.
-Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, etc).
-- <Command> (CTRL) <SHIFT> 3 : Global screen capture.
-- <Command> (CTRL) <SHIFT> 4 : Windows screen capture.
-- <Command> (CTRL) <SHIFT> 5 : will make a global screen capture.
+Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, \\, \|, etc).
+- \<CMD> (CTRL) \<SHIFT> 3 : Global screen capture.
+- \<CMD> (CTRL) \<SHIFT> 4 : Windows screen capture.
+- \<CMD> (CTRL) \<SHIFT> 5 : will make a global screen capture.
 Exposé features:
 - F3 : Toggle Workspace overview
 - F4 : Toggle applications Launchpad overview
