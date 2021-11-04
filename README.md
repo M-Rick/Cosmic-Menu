@@ -18,7 +18,7 @@ Installation: ```sudo sh 'Cosmic Menu.sh' ```
 
 ## macOS keybindings
 This script adds macOS keybindings in Pop!_OS and Nautilus.
-The keyboard is set to map French macOS keyboards. This can be changed later or the jsute comment ```#``` the line to keep your settings. To change the language just replace *fr* with your language code.
+The keyboard is set to map French macOS keyboards. This can be changed later or the just comment ```#``` the line to keep your settings. To change the language just replace *fr* with your language code.
 Control and Command keys are inverted to bring the CTRL shortcuts behaviour back to the Command key.
 Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, etc).
 - <Command> (CTRL) <SHIFT> 3 : Global screen capture.
