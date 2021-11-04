@@ -1,12 +1,11 @@
 #! /bin/sh
 
 mkdir budgie
-### Cosmic Menu ###
+### 1 - Cosmic Menu ###
 ## Download Bugie Panel
 sudo apt update
 sudo apt autoremove
 sudo apt install gnome-shell-extension-autohidetopbar appmenu-gtk-module-common appmenu-gtk2-module appmenu-gtk3-module indicator-appmenu budgie-core budgie-indicator-applet budgie-workspace-overview-applet budgie-applications-menu-applet budgie-app-launcher-applet budgie-applications-menu-applet budgie-indicator-applet budgie-brightness-controller-applet budgie-desktop-view budgie-takeabreak-applet budgie-weathershow-applet budgie-showtime-applet budgie-extras-common budgie-extras-daemon budgie-sntray-plugin gnome-sushi gnome-tweaks- gnome-shell-extensions-
-
 ## Hide Top Bar
 gnome-extensions enable hidetopbar@mathieu.bidon.ca
 echo "[/]
@@ -18,7 +17,6 @@ shortcut-toggles=false
 show-in-overview=false
 " > ~/budgie/hidetopbar
 dconf load /org/gnome/shell/extensions/hidetopbar/ < ~/budgie/hidetopbar
-
 ## GTK CSS ##
 GTK=~/.config/gtk-3.0
 if [ ! -d "$GTK" ]; then
@@ -96,7 +94,6 @@ else
     echo "" >> $GTK/gtk.css
     echo "$CSS" >> $GTK/gtk.css
 fi
-
 ## Budgie ##
 ## Settings
 mkdir budgie
@@ -189,7 +186,6 @@ Alignment=end
 " > ~/budgie/cosmic.layout
     sudo mv '~/budgie/cosmic.layout' '/usr/share/budgie-desktop/layouts'
 fi
-
 ## Autostart Bugie Panel
 echo "[Desktop Entry]
 Type=Application
@@ -201,7 +197,6 @@ Name=Budgie Panel Cosmic Menu
 Comment=
 " > ~/budgie/budgie-panel.desktop
 sudo mv '~/budgie/budgie-panel.desktop' '/etc/xdg/autostart/budgie-panel.desktop'
-
 ## Budgie Panel
 echo "[/]
 layout='cosmic'
@@ -355,51 +350,107 @@ gsettings set org.ubuntubudgie.plugins.budgie-appmenu enable-powerstrip true
 gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature '3500'
 # Showtime
 echo "[/]
+allmonitors=true
+leftalign=false
 datefont='Ubuntu Medium 30'
 timefont='Fira Sans UltraLight 80'
 " > ~/budgie/showtime
 dconf reset -f /org/ubuntubudgie/plugins/budgie-showtime/
 dconf load /org/ubuntubudgie/plugins/budgie-showtime/ < ~/budgie/showtime
 gsettings set org.ubuntubudgie.plugins.budgie-showtime allmonitors true
+gsettings set org.ubuntubudgie.plugins.budgie-showtime leftalign false
 gsettings set org.ubuntubudgie.plugins.budgie-showtime datefont 'Ubuntu Medium 30'
 gsettings set org.ubuntubudgie.plugins.budgie-showtime timefont 'Fira Sans UltraLight 80'
-
 ## Nautilus Settings ##
 gsettings set org.gnome.nautilus.list-view default-zoom-level 'small'
 gsettings set org.gnome.nautilus.list-view use-tree-view true
 gsettings set org.gnome.nautilus.preferences show-create-link true
 gsettings set org.gnome.nautilus.preferences executable-text-activation 'launch'
 
+### 2 - LibreOffice setup ###
 ## LibreOffice
-sudo apt install libreoffice-style-sukapura
-libreoffice=/usr/share/applications/libreoffice
+sudo apt install libreoffice-base libreoffice-style-sukapura
+LIBREOFFICE=~/.config/libreoffice/4/user
+## Set Sukapura theme
+if [ ! -f "$LIBREOFFICE/registrymodifications.xcu" ]; then
+    mkdir $LIBREOFFICE
+    echo "<?xml version="1.0" encoding="UTF-8"?>
+<oor:items xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<item oor:path="/org.openoffice.Office.Common/Font/SourceViewFont"><prop oor:name="FontName" oor:op="fuse"><value>Automatique</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Font/Substitution"><prop oor:name="Replacement" oor:op="fuse"><value>false</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="DisableUICustomization" oor:op="fuse"><value>false</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="FirstRun" oor:op="fuse"><value>false</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="NotebookbarIconSize" oor:op="fuse"><value>0</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="Persona" oor:op="fuse"><value>no</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="PersonaSettings" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="SidebarIconSize" oor:op="fuse"><value>0</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="SymbolSet" oor:op="fuse"><value>2</value></prop></item>
+<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="SymbolStyle" oor:op="fuse"><value>sukapura</value></prop></item>
+<item oor:path="/org.openoffice.Office.Logging/Settings"><node oor:name="unopkg" oor:op="replace"><prop oor:name="LogLevel" oor:op="fuse"><value>2147483647</value></prop><prop oor:name="DefaultHandler" oor:op="fuse"><value>com.sun.star.logging.FileHandler</value></prop><node oor:name="HandlerSettings"><prop oor:name="FileURL" oor:op="fuse"><value>$(userurl)/$(loggername).log</value></prop></node><prop oor:name="DefaultFormatter" oor:op="fuse"><value>com.sun.star.logging.PlainTextFormatter</value></prop><node oor:name="FormatterSettings"></node></node></item>
+<item oor:path="/org.openoffice.Office.Recovery/RecoveryInfo"><prop oor:name="SessionData" oor:op="fuse"><value>false</value></prop></item>
+<item oor:path="/org.openoffice.Setup/L10N"><prop oor:name="ooLocale" oor:op="fuse"><value>fr</value></prop></item>
+<item oor:path="/org.openoffice.Setup/Office/Factories/org.openoffice.Setup:Factory['com.sun.star.frame.StartModule']"><prop oor:name="ooSetupFactoryWindowAttributes" oor:op="fuse"><value>0,64,1566,951;5;0,64,1680,986;</value></prop></item>
+<item oor:path="/org.openoffice.Setup/Office"><prop oor:name="LastCompatibilityCheckID" oor:op="fuse"><value>10(Build:2)</value></prop></item>
+<item oor:path="/org.openoffice.Setup/Office"><prop oor:name="OfficeRestartInProgress" oor:op="fuse"><value>false</value></prop></item>
+<item oor:path="/org.openoffice.Setup/Office"><prop oor:name="ooSetupInstCompleted" oor:op="fuse"><value>true</value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="c" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="encryptionkey" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="encrypttoself" oor:op="fuse"><value>true</value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="facsimiletelephonenumber" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="givenname" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="homephone" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="initials" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="l" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="mail" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="o" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="position" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="postalcode" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="signingkey" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="sn" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="street" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="telephonenumber" oor:op="fuse"><value></value></prop></item>
+<item oor:path="/org.openoffice.UserProfile/Data"><prop oor:name="title" oor:op="fuse"><value></value></prop></item>
+</oor:items>
+" > ~/budgie/libreoffice
+    mv '~/budgie/libreoffice' "$LIBREOFFICE/registrymodifications.xcu"
+else
+    if grep -q SymbolStyle "$LIBREOFFICE/registrymodifications.xcu"; then
+    sed -i 's#<prop oor:name="SymbolStyle" oor:op="fuse"><value>.*</value></prop>#<prop oor:name="SymbolStyle" oor:op="fuse"><value>sukapura</value></prop>#' $LIBREOFFICE'/user/registrymodifications.xcu'
+    else
+    sed -i '$i''<item oor:path="/org.openoffice.Office.Common/Misc"><prop oor:name="SymbolStyle" oor:op="fuse"><value>sukapura</value></prop></item>' $LIBREOFFICE'/user/registrymodifications.xcu'
+fi
+## Set light theme for LibreOffice
 # libreoffice-startcenter.desktop
 if [ -d "$libreoffice"-startcenter.desktop ]; then
-sudo sed -i 's/Exec=libreoffice %U/Exec=env GTK_THEME=Pop libreoffice %U/' $libreoffice'-startcenter.desktop'
+    sudo sed -i 's/Exec=libreoffice %U/Exec=env GTK_THEME=Pop libreoffice %U/' $libreoffice'-startcenter.desktop'
+fi
+# libreoffice-base.desktop
+if [ -d "$libreoffice"-writer.desktop ]; then
+    sudo sed -i 's/Exec=libreoffice --base %U/Exec=env GTK_THEME=Pop libreoffice --base %U/' $libreoffice'-writer.desktop'
 fi
 # libreoffice-calc.desktop
 if [ -d "$libreoffice"-calc.desktop ]; then
-sudo sed -i 's/Exec=libreoffice --calc %U/Exec=env GTK_THEME=Pop libreoffice --calc %U/' $libreoffice'-calc.desktop'
+    sudo sed -i 's/Exec=libreoffice --calc %U/Exec=env GTK_THEME=Pop libreoffice --calc %U/' $libreoffice'-calc.desktop'
 fi
 # libreoffice-draw.desktop
 if [ -d "$libreoffice"-draw.desktop ]; then
-sudo sed -i 's/Exec=libreoffice --draw %U/Exec=env GTK_THEME=Pop libreoffice --draw %U/' $libreoffice'-draw.desktop'
+    sudo sed -i 's/Exec=libreoffice --draw %U/Exec=env GTK_THEME=Pop libreoffice --draw %U/' $libreoffice'-draw.desktop'
 fi
 # libreoffice-impress.desktop
 if [ -d "$libreoffice"-impress.desktop ]; then
-sudo sed -i 's/Exec=libreoffice --impress %U/Exec=env GTK_THEME=Pop libreoffice --impress %U/' $libreoffice'-impress.desktop'
+    sudo sed -i 's/Exec=libreoffice --impress %U/Exec=env GTK_THEME=Pop libreoffice --impress %U/' $libreoffice'-impress.desktop'
 fi
 # libreoffice-math.desktop
 if [ -d "$libreoffice"-math.desktop ]; then
-sudo sed -i 's/Exec=libreoffice --math %U/Exec=env GTK_THEME=Pop libreoffice --math %U/' $libreoffice'/-math.desktop'
+    sudo sed -i 's/Exec=libreoffice --math %U/Exec=env GTK_THEME=Pop libreoffice --math %U/' $libreoffice'/-math.desktop'
 fi
 # libreoffice-writer.desktop
 if [ -d "$libreoffice"-writer.desktop ]; then
-sudo sed -i 's/Exec=libreoffice --writer %U/Exec=env GTK_THEME=Pop libreoffice --writer %U/' $libreoffice'-writer.desktop'
+    sudo sed -i 's/Exec=libreoffice --writer %U/Exec=env GTK_THEME=Pop libreoffice --writer %U/' $libreoffice'-writer.desktop'
 fi
 # libreoffice-xsltfilter.desktop
 if [ -d "$libreoffice"-xsltfilter.desktop ]; then
-sudo sed -i 's/Exec=libreoffice %U/Exec=env GTK_THEME=Pop libreoffice %U/' $libreoffice'-xsltfilter.desktop'
+    sudo sed -i 's/Exec=libreoffice %U/Exec=env GTK_THEME=Pop libreoffice %U/' $libreoffice'-xsltfilter.desktop'
 fi
 
 ### 3 - Export global dconf settings ###
