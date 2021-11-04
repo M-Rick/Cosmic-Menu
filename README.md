@@ -23,7 +23,7 @@ Control and Command keys are inverted to bring the CTRL shortcuts behaviour back
 Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, \\, \|, etc).
 - \<CMD> (CTRL) \<SHIFT> 3 : Global screen capture.
 - \<CMD> (CTRL) \<SHIFT> 4 : Windows screen capture.
-- \<CMD> (CTRL) \<SHIFT> 5 : will make a global screen capture.
+- \<CMD> (CTRL) \<SHIFT> 5 : Select zone screen capture.
 Exposé features:
 - F3 : Toggle Workspace overview
 - F4 : Toggle applications Launchpad overview
