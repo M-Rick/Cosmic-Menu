@@ -25,5 +25,6 @@ Enjoy!
 
 ![Capture d’écran du 2021-11-04 10-35-10](https://user-images.githubusercontent.com/2520948/140293124-d8a7c59a-7738-4843-8501-1d1ca0bd4a67.png)
 
-![Capture d’écran du 2021-11-04 11-28-11](https://user-images.githubusercontent.com/2520948/140298477-b4ac34bd-910b-49f9-8efc-67962433ef29.png)
+![Capture d’écran du 2021-11-04 11-30-33](https://user-images.githubusercontent.com/2520948/140298916-f0c5baf6-0c83-4326-9fcd-4bddd7f483ee.png)
+
 
