@@ -2,7 +2,7 @@
 
 ## Desktop (Mac specific bindings)
 gsettings set org.gnome.desktop.input-sources sources [('xkb', 'fr+mac')] #Map keyboard to French macOS keyboards
-gsettings set org.gnome.desktop.input-sources xkb-options ['ctrl:swap_lwin_lctl', 'ctrl:swap_rwin_rctl', 'lv3:lalt_switch', 'compose:ralt', 'eurosign:e', 'mod_led:compose', 'numpad:mac']
+gsettings set org.gnome.desktop.input-sources xkb-options ['ctrl:swap_lwin_lctl', 'ctrl:swap_rwin_rctl', 'lv3:lalt_switch', 'compose:ralt', 'eurosign:e', 'mod_led:compose', 'numpad:mac'] #Invert CTRL and META, enable Alt GR compose and Alt level 3
 ## Keybindings (Mac specific bindings)
 gsettings set org.gnome.shell.keybindings toggle-overview ['F3'] #Toggle Workspace overview
 gsettings set org.gnome.shell.keybindings toggle-application-view ['F4'] #Toggle applications Launchpad overview
