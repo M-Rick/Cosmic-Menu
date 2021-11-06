@@ -26,8 +26,8 @@ Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, \\, \|, etc)
 - \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot.
 - \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 3 : Global screenshot clipboard.
 - \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 4 : Windows screenshot clipboard.
-- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot clipboard.
-Exposé features:
+- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot clipboard.  
+Exposé features:  
 - F3 : Toggle Workspace overview
 - F4 : Toggle applications Launchpad overview
 - F10 : Show Activities overview
