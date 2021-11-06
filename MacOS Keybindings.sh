@@ -20,4 +20,5 @@ gsettings set org.gnome.Terminal.Legacy.Keybindings full-screen <Shift>F11
 
 ## Enable Nautilus Typeahead Find
 sudo add-apt-repository ppa:lubomir-brindza/nautilus-typeahead
+sudo apt dist-upgrade
 gsettings set org.gnome.nautilus.preferences enable-interactive-search true
