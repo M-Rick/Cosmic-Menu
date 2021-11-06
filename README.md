@@ -21,12 +21,16 @@ This script adds macOS keybindings in Pop!_OS and Nautilus.
 The keyboard is set to map French macOS keyboards. This can be changed later or the just comment ```#``` the line to keep your settings. To change the language just replace *fr* with your language code.
 Control and Command keys are inverted to bring the CTRL shortcuts behaviour back to the Command key.
 Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, \\, \|, etc).
-- \<CMD> (CTRL) \<SHIFT> 3 : Global screen capture.
-- \<CMD> (CTRL) \<SHIFT> 4 : Windows screen capture.
-- \<CMD> (CTRL) \<SHIFT> 5 : Select zone screen capture.
+- \<CMD> (CTRL) \<SHIFT> 3 : Global screenshot.
+- \<CMD> (CTRL) \<SHIFT> 4 : Windows screenshot.
+- \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot.
+- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 3 : Global screenshot clipboard.
+- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 4 : Windows screenshot clipboard.
+- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot clipboard.
 Exposé features:
 - F3 : Toggle Workspace overview
 - F4 : Toggle applications Launchpad overview
+- F10 : Show Activities overview
 - F11 : Hide applications and show desktop
 - \<SHIFT> F11 : Toggle fullscreen
 
