@@ -1,0 +1,34 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+<Menu>
+    <Name>Applications</Name>
+    <DefaultAppDirs/>
+    <DefaultDirectoryDirs/>
+    
+    <Include>
+        <Category>xpple</Category>
+    </Include>
+    
+    <Layout>
+        <Filename>help.desktop</Filename>
+        <Filename>settings.desktop</Filename>
+        <Filename>update.desktop</Filename>
+        <Separator/>
+        <Filename>appcenter.desktop</Filename>
+        <Filename>softwares.desktop</Filename>
+        <Filename>terminal.desktop</Filename>
+        <Separator/>
+        <Filename>monitor.desktop</Filename>
+        <Separator/>
+        <Filename>suspend.desktop</Filename>
+        <Filename>reboot.desktop</Filename>
+        <Filename>shutdown.desktop</Filename>
+        <Separator/>
+        <Filename>lock.desktop</Filename>
+        <Filename>logout.desktop</Filename>
+    </Layout>  
+</Menu>
+
+<Exclude>
+    <Category>xpple</Category>
+</Exclude>
