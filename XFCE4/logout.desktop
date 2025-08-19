@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Logout
+Name[en]=Logout
+Name[fr]=Fermer la session
+Comment=Fermer la session utilisateur
+Icon=system-log-out
+Exec=gnome-session-quit --logout --no-prompt
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;
+Categories=xpple;

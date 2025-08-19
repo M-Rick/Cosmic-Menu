@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Reboot
+Name[en]=Reboot
+Name[fr]=Redémarrer…
+Comment=Redémarrer l'ordinateur
+Icon=system-reboot
+Exec=systemctl reboot
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;Pantheon;XFCE;
+Categories=xpple;

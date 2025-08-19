@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Software Install
+Name[en]=Softwares
+Name[fr]=Logiciels
+Comment=Install selected software on the system
+Icon=system-software-install
+Exec=gnome-software 
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;Pantheon;XFCE;
+Categories=xpple;

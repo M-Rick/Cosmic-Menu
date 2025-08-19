@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Shutdown
+Name[en]=Shutdown
+Name[fr]=Éteindre…
+Comment=Éteindre l'ordinateur
+Icon=system-shutdown
+Exec=systemctl poweroff
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;Pantheon;XFCE;
+Categories=xpple;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=System Monitor
+Name[en]=System Monitor
+Name[fr]=Moniteur système
+Icon=utilities-system-monitor
+Exec=gnome-system-monitor 
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;Pantheon;XFCE;
+Categories=xpple;

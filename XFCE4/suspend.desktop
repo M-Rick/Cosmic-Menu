@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Logout
+Name[en]=System Suspend
+Name[fr]=Suspendre l'activité
+Comment=Fermer la session utilisateur
+Icon=system-log-out
+Exec=systemctl suspend
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;Pantheon;XFCE;
+Categories=xpple;

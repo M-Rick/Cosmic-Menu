@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Lock
+Name[en]=Lock screen
+Name[fr]=Verouiller l'écran
+Comment=
+Icon=system-lock-screen
+Exec=loginctl lock-session
+Terminal=false
+NoDisplay=false
+OnlyShowIn=Gnome;Pantheon;XFCE;
+Categories=xpple;
+
