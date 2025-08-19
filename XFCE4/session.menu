@@ -6,7 +6,7 @@
     <DefaultDirectoryDirs/>
     
     <Include>
-        <Category>xpple</Category>
+        <Category>MacUbuntu</Category>
     </Include>
     
     <Layout>
@@ -30,5 +30,5 @@
 </Menu>
 
 <Exclude>
-    <Category>xpple</Category>
+    <Category>MacUbuntu</Category>
 </Exclude>
