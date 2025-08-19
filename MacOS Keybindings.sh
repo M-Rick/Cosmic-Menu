@@ -1,7 +1,6 @@
 #! /bin/sh
 
 ## Desktop (Mac specific bindings)
-dconf write /org/gnome/desktop/input-sources/sources "[('xkb', 'fr+mac')]" #Map keyboard to French macOS keyboards
 dconf write /org/gnome/desktop/input-sources/xkb-options "['ctrl:swap_lwin_lctl', 'ctrl:swap_rwin_rctl', 'lv3:lalt_switch', 'compose:ralt', 'eurosign:e', 'mod_led:compose', 'numpad:mac']" #Invert CTRL and META, enable Alt GR compose and Alt level 3
 ## Keybindings (Mac specific bindings)
 dconf write /org/gnome/shell/keybindings/toggle-overview "['F3']" #Toggle Workspace overview
@@ -15,8 +14,3 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/screenshot-clip "['<Pr
 dconf write /org/gnome/settings-daemon/plugins/media-keys/window-screenshot-clip "['<Primary><Shift><Super>4']" #Window screenshot clipboard
 dconf write /org/gnome/settings-daemon/plugins/media-keys/area-screenshot-clip "['<Primary><Shift><Super>5']" #Area screenshot clipboard
 dconf write /org/gnome/desktop/wm/keybindings/toggle-fullscreen "['<Shift>F11']" #Toggle fullscreen
-
-## Enable Nautilus Typeahead Find
-sudo add-apt-repository ppa:lubomir-brindza/nautilus-typeahead
-sudo apt dist-upgrade
-gsettings set org.gnome.nautilus.preferences enable-interactive-search true
