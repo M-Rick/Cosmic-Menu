@@ -3,7 +3,7 @@
 ## MacUbuntu - Ubuntu with a macOS global menu
 ## Works only in X11 until XFCE4 is ported under Wayland
 ## Ubuntu 22.04 and higher Vanilla version
-## https://github.com/M-Rick/Cosmic-Menu
+## https://github.com/M-Rick/MacUbuntu
 
 #set -e  # Stop in case of errors
 
@@ -265,7 +265,7 @@ cat > ~/.local/share/applications/lock.desktop << 'EOF'
 [Desktop Entry]
 Type=Application
 Name=Lock screen
-Name[fr]=Verouiller l'écran
+Name[fr]=Verrouiller l'écran
 Exec=loginctl lock-session
 Icon=system-lock-screen
 NoDisplay=false
