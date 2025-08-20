@@ -1,7 +1,7 @@
 # MacUbuntu
 ## A global menu for Gnome Shell and Pop!_OS (version 22 only)
 
-The Cosmic Menu script will bring a global menu to the top of the screen in the Pop!_OS desktop.
+The Cosmic Menu script will bring a global menu to the top of the screen in the Gnome desktop.
 All previous existing settings are backed up.
 The global menu uses XFCE4 Panel and brings most of the features available in XFCE4.
 
