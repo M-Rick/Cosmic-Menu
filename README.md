@@ -12,7 +12,7 @@ It only works in X11 because XFCE4 and appmenu aren't supported yet under Waylan
 
 Don't forget to save all your desktop configuration first with ```dconf dump / > dconf-settings.ini```.
 
-To disable the global menu, just remove the startup desktop file ```sudo rm -f /etc/xdg/autostart/xfce4-panel.desktop```
+To disable the global menu, just remove the startup desktop file ```sudo rm -f ~/.config/autostart/xfce4-panel.desktop```
 
 Installation: ```sudo sh 'Cosmic Menu.sh' ```
 
