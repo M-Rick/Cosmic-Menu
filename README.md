@@ -14,7 +14,7 @@ Don't forget to save all your desktop configuration first with ```dconf dump / >
 
 To disable the global menu, just remove the startup desktop file ```sudo rm -f ~/.config/autostart/xfce4-panel.desktop```
 
-Installation: ```sudo sh 'Cosmic Menu.sh' ```
+Installation: ```sudo sh 'MacUbuntu.sh' ```
 
 ## macOS keybindings
 This script adds macOS keybindings in Pop!_OS and Nautilus.
