@@ -1,18 +1,18 @@
 # Cosmic-Menu
 ## A global menu for Pop!_OS and Gnome Shell
 
-The Cosmic Menu script will bring a global menu on top of the screen in the Pop!_OS desktop. It is  Gnome Sushi enabled as well.
-All previous existing settings will be kept.
-The global menu uses Budgie Panel and brings most of the features avaible in Budgie.
+The Cosmic Menu script will bring a global menu to the top of the screen in the Pop!_OS desktop.
+All previous existing settings are backed up.
+The global menu uses XFCE4 Panel and brings most of the features avaible in Budgie.
 
-This script will install all the requirement for Budgie Panel. The top menu can be customized and other panels can be created.
+This script will install all the requirements for XFCE4 Panel. The top menu can be customized and other panels can be created.
 A new GTK3 CSS script is created in the user profile. Nautilus is modified to bring small icons with tree-view in list view.
 
-LibreOffice gets the Sukapura theme in light mode. 
+It only works in X11 because XFCE4 and appmenu aren't supported yet under Wayland.
 
 Don't forget to save all your desktop configuration first with ```dconf dump / > dconf-settings.ini```.
 
-To disable the global menu, just remove the startup desktop file ```sudo rm -f /etc/xdg/autostart/budgie-panel.desktop```
+To disable the global menu, just remove the startup desktop file ```sudo rm -f /etc/xdg/autostart/xfce4-panel.desktop```
 
 Installation: ```sudo sh 'Cosmic Menu.sh' ```
 
@@ -21,13 +21,15 @@ This script adds macOS keybindings in Pop!_OS and Nautilus.
 The keyboard is set to map French macOS keyboards. This can be changed later or the just comment ```#``` the line to keep your settings. To change the language just replace *fr* with your language code.
 Control and Command keys are inverted to bring the CTRL shortcuts behaviour back to the Command key.
 Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, \\, \|, etc).
+### Screenshots
 - \<CMD> (CTRL) \<SHIFT> 3 : Global screenshot.
-- \<CMD> (CTRL) \<SHIFT> 4 : Windows screenshot.
+- \<CMD> (CTRL) \<SHIFT> 4 : Window screenshot.
 - \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot.
 - \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 3 : Global screenshot clipboard.
 - \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 4 : Windows screenshot clipboard.
-- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot clipboard.  
-Exposé features:  
+- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot clipboard. 
+ 
+### Exposé features
 - F3 : Toggle Workspace overview
 - F4 : Toggle applications Launchpad overview
 - F10 : Show Activities overview
@@ -36,12 +38,10 @@ Exposé features:
 
 Enjoy!
 
-![Capture d’écran du 2021-11-03 14-45-00](https://user-images.githubusercontent.com/2520948/140293080-99294c1a-1843-43b4-99c5-09eb78b2f857.png)
+<img width="2048" height="1152" alt="Capture d’écran du 2025-08-20 13-50-19" src="https://github.com/user-attachments/assets/da7c9824-9830-4b90-9dc2-c8d6be8d3e21" />
+  
+   
+<img width="2048" height="1152" alt="Capture d’écran du 2025-08-20 15-20-09" src="https://github.com/user-attachments/assets/f676b427-3a79-4bde-8398-ec55201d1796" />
 
-![Capture d’écran du 2021-11-03 14-52-51](https://user-images.githubusercontent.com/2520948/140293112-2b179aca-0933-4d6f-9eb0-f4d26f2b52b3.png)
-
-![Capture d’écran du 2021-11-04 10-35-10](https://user-images.githubusercontent.com/2520948/140293124-d8a7c59a-7738-4843-8501-1d1ca0bd4a67.png)
-
-![Capture d’écran du 2021-11-04 11-30-33](https://user-images.githubusercontent.com/2520948/140298916-f0c5baf6-0c83-4326-9fcd-4bddd7f483ee.png)
 
 
