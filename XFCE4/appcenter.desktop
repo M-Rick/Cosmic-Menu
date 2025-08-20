@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name[en]=Ubuntu App Center
+Name[fr]=Centre d’Applications Ubuntu
+Exec=snap-store
+Icon=snap-store
+NoDisplay=false
+Categories=MacUbuntu;

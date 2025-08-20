@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Update Flatpaks
+Exec=bash -c "flatpak update -y && notify-send 'Flatpaks updated'"
+Icon=applications-system
+Categories=MacUbuntu;
+Terminal=true

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=System Cleanup
+Name[fr]=Nettoyage système
+Exec=bash -c "sudo apt autoremove && sudo apt autoclean && notify-send 'Cleanup completed'"
+Icon=applications-system
+Categories=MacUbuntu;
+Terminal=true

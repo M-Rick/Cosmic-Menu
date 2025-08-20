@@ -1,11 +1,8 @@
 [Desktop Entry]
-Type=Application
-Name=System Monitor
-Name[en]=System Monitor
-Name[fr]=Moniteur système
+Name[en]=Activity Monitor
+Name[fr]=Moniteur d'activité
+Exec=gnome-system-monitor
 Icon=utilities-system-monitor
-Exec=gnome-system-monitor 
-Terminal=false
+Type=Application
 NoDisplay=false
-OnlyShowIn=Gnome;Pantheon;XFCE;
-Categories=xpple;
+Categories=MacUbuntu;

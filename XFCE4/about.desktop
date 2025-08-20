@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name[en]=About this computer
+Name[fr]=À propos de cet ordinateur
+Exec=gnome-control-center about
+Icon=start-here
+NoDisplay=false
+Categories=MacUbuntu;

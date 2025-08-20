@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=System Information
+Name[fr]=Information système
+Exec=bash -c "neofetch && read -p 'Press Enter to continue...'"
+Icon=computer
+Categories=MacUbuntu2;
+Terminal=true

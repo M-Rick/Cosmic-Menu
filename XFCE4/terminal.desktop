@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+Exec=gnome-terminal
+Icon=utilities-terminal
+NoDisplay=false
+Categories=MacUbuntu;
