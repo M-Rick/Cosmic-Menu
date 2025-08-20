@@ -1004,7 +1004,7 @@ dconf load /org/gnome/shell/extensions/trayIconsReloaded/ < ~/.config/dconf/MacU
 
 
 # Install Short Panel extension
-echo "Installing Pop Shell extension..."
+echo "Installing Short Panel extension..."
 if [ ! -f ~/.local/share/gnome-shell/extensions/short-panel@yourdomain.com/metadata.json ]; then
     wget https://github.com/M-Rick/short-panel/releases/download/v1.0.0/short-panel@yourdomain.com.zip -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
         echo "Warning: Could not download Short Panel extension"
@@ -1022,6 +1022,25 @@ if [ ! -f ~/.local/share/gnome-shell/extensions/pop-shell@system76.com/metadata.
     unzip -q ~/.config/dconf/MacUbuntu/pop-shell@system76.com.zip -d ~/.config/dconf/MacUbuntu/
     mv ~/.config/dconf/MacUbuntu/pop-shell@system76.com ~/.local/share/gnome-shell/extensions/
 fi
+
+# Legacy (GTK3) Theme Scheme Auto Switcher
+# https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/
+echo "Installing Legacy (GTK3) Theme Scheme Auto Switcher extension..."
+if [ -f ~/.local/share/gnome-shell/extensions/legacyschemeautoswitcher@joshimukul29.gmail.com/metadata.json ]; then
+    rm -dR ~/.local/share/gnome-shell/extensions/legacyschemeautoswitcher@joshimukul29.gmail.com
+fi
+wget https://github.com/M-Rick/MacUbuntu/raw/main/Extensions/legacyschemeautoswitcher%40joshimukul29.gmail.com.zip -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
+echo "Warning: Could not download Legacy (GTK3) Theme Scheme Auto Switcher extension"
+}
+unzip -q ~/.config/dconf/MacUbuntu/legacyschemeautoswitcher@joshimukul29.gmail.com.zip -d ~/.config/dconf/MacUbuntu/
+mv ~/.config/dconf/MacUbuntu/legacyschemeautoswitcher@joshimukul29.gmail.com ~/.local/share/gnome-shell/extensions/
+
+# Tray Icons Reloaded
+# https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+echo "Installing Tray Icons Reloaded extension..."
+gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/Shell/Extensions --method org.gnome.Shell.Extensions.InstallRemoteExtension "trayIconsReloaded@selfmade.pl" 2>/dev/null || {
+    echo "Warning: Could not install Tray Icons Reloaded extension"
+}
 
 # App Hider
 # https://extensions.gnome.org/extension/5895/app-hider/
@@ -1044,13 +1063,6 @@ gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/
     echo "Warning: Could not install Just Perfection extension"
 }
 
-# Legacy (GTK3) Theme Scheme Auto Switcher
-# https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/
-echo "Installing Legacy (GTK3) Theme Scheme Auto Switcher extension..."
-gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/Shell/Extensions --method org.gnome.Shell.Extensions.InstallRemoteExtension "legacyschemeautoswitcher@joshimukul29.gmail.com" 2>/dev/null || {
-    echo "Warning: Could not install Legacy (GTK3) Theme Scheme Auto Switcher extension"
-}
-
 # Night Light Slider
 # https://extensions.gnome.org/extension/7846/night-light-slider/
 echo "Installing Night Light Slider extension..."
@@ -1063,13 +1075,6 @@ gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/
 echo "Installing Rounded Window Corners Reborn extension..."
 gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/Shell/Extensions --method org.gnome.Shell.Extensions.InstallRemoteExtension "rounded-window-corners@fxgn" 2>/dev/null || {
     echo "Warning: Could not install Rounded Window Corners Reborn extension"
-}
-
-# Tray Icons Reloaded
-# https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
-echo "Installing Tray Icons Reloaded extension..."
-gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/Shell/Extensions --method org.gnome.Shell.Extensions.InstallRemoteExtension "trayIconsReloaded@selfmade.pl" 2>/dev/null || {
-    echo "Warning: Could not install Tray Icons Reloaded extension"
 }
 
 # Install and configure Ding extension (desktop icons) if not on Ubuntu
