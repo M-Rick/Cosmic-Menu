@@ -1006,20 +1006,20 @@ dconf load /org/gnome/shell/extensions/trayIconsReloaded/ < ~/.config/dconf/MacU
 # Install Short Panel extension
 echo "Installing Pop Shell extension..."
 if [ ! -f ~/.local/share/gnome-shell/extensions/short-panel@yourdomain.com/metadata.json ]; then
-    wget https://github.com/M-Rick/short-panel/releases/download/v1.0.0/short-panel@yourdomain.com.7z -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
+    wget https://github.com/M-Rick/short-panel/releases/download/v1.0.0/short-panel@yourdomain.com.zip -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
         echo "Warning: Could not download Short Panel extension"
     }
-    unzip -q ~/.config/dconf/MacUbuntu/short-panel@yourdomain.com.7z -d ~/.config/dconf/MacUbuntu/
+    unzip -q ~/.config/dconf/MacUbuntu/short-panel@yourdomain.com.zip -d ~/.config/dconf/MacUbuntu/
     mv ~/.config/dconf/MacUbuntu/short-panel/short-panel@yourdomain.com ~/.local/share/gnome-shell/extensions/
 fi
 
 # Install Pop!_OS Window Tiling
 echo "Installing Pop Shell extension..."
 if [ ! -f ~/.local/share/gnome-shell/extensions/pop-shell@system76.com/metadata.json ]; then
-    wget https://github.com/M-Rick/pop-shell/releases/download/v1.2.1/pop-shell@system76.com.7z -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
+    wget https://github.com/M-Rick/pop-shell/releases/download/v1.2.1/pop-shell@system76.com.zip -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
         echo "Warning: Could not download Pop Shell extension"
     }
-    unzip -q ~/.config/dconf/MacUbuntu/pop-shell@system76.com.7z -d ~/.config/dconf/MacUbuntu/
+    unzip -q ~/.config/dconf/MacUbuntu/pop-shell@system76.com.zip -d ~/.config/dconf/MacUbuntu/
     mv ~/.config/dconf/MacUbuntu/pop-shell@system76.com ~/.local/share/gnome-shell/extensions/
 fi
 
@@ -1162,7 +1162,7 @@ if ! grep -q "export UBUNTU_MENUPROXY" ~/.bashrc; then
     echo "export UBUNTU_MENUPROXY=1" >> ~/.bashrc
 fi
 
-rm -f ~/.config/dconf/MacUbuntu/*.7z
+rm -f ~/.config/dconf/MacUbuntu/*.zip
 
 echo ""
 echo "==================================================="
