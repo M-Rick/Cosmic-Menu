@@ -3,7 +3,7 @@
 
 The Cosmic Menu script will bring a global menu to the top of the screen in the Pop!_OS desktop.
 All previous existing settings are backed up.
-The global menu uses XFCE4 Panel and brings most of the features avaible in Budgie.
+The global menu uses XFCE4 Panel and brings most of the features available in XFCE4.
 
 This script will install all the requirements for XFCE4 Panel. The top menu can be customized and other panels can be created.
 A new GTK3 CSS script is created in the user profile. Nautilus is modified to bring small icons with tree-view in list view.
@@ -26,7 +26,7 @@ Alt enables special level 3 characters (æ, Æ, œ, Œ, €, ß, ~, \\, \|, etc)
 - \<CMD> (CTRL) \<SHIFT> 4 : Window screenshot.
 - \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot.
 - \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 3 : Global screenshot clipboard.
-- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 4 : Windows screenshot clipboard.
+- \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 4 : Window screenshot clipboard.
 - \<CTRL> (CMD/META) \<CMD> (CTRL) \<SHIFT> 5 : Area screenshot clipboard. 
  
 ### Exposé features
