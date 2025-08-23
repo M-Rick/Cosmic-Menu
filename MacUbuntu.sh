@@ -14,6 +14,7 @@ mkdir -p ~/.config/autostart
 mkdir -p ~/.config/dconf/MacUbuntu
 mkdir -p ~/.local/share/applications
 mkdir -p ~/.local/share/gnome-shell/extensions
+mkdir -p ~/.local/share/icons/Yaru/actions/symbolic
 
 ## Backup settings
 dconf dump / > ~/.config/dconf/MacUbuntu/dconf.bak
@@ -138,7 +139,7 @@ cat > ~/.config/dconf/MacUbuntu/session.menu << 'EOF'
 
 EOF
 
-# À ajouter après la création du menu session.menu
+
 echo "Creating MacUbuntu menu items..."
 
 # About
@@ -285,8 +286,47 @@ Categories=MacUbuntu;
 EOF
 
 
-chmod +x ~/.local/share/applications/*.desktop
-update-desktop-database ~/.local/share/applications/
+# Pantheon Files
+
+# Download Pantheon Files icons
+wget -q https://github.com/M-Rick/MacUbuntu/raw/main/Icons/view-column-symbolic.svg
+mv ~/view-column-symbolic.svg ~/.local/share/icons/Yaru/actions/symbolic
+
+# Install Pantheon Files
+echo "Detecting system architecture..."
+ARCH=$(uname -m)
+case $ARCH in
+    x86_64)
+        DEBIAN_ARCH="amd64"
+        ;;
+    aarch64|arm64)
+        DEBIAN_ARCH="arm64"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
+echo "Architecture detected: $DEBIAN_ARCH"
+
+# Download Pantheon Files for detected architecture
+echo "Downloading Pantheon Files for $DEBIAN_ARCH..."
+wget https://launchpad.net/~elementary-os/+archive/ubuntu/stable/+files/pantheon-files_7.1.4+r6464+pkg134~ubuntu8.1_${DEBIAN_ARCH}.deb -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
+    echo "Warning: Could not download pantheon-files"
+}
+wget https://launchpad.net/~elementary-os/+archive/ubuntu/stable/+files/libpantheon-files-core0_7.1.4+r6464+pkg134~ubuntu8.1_${DEBIAN_ARCH}.deb -P ~/.config/dconf/MacUbuntu --no-check-certificate || {
+    echo "Warning: Could not download libpantheon-files-core0"
+}
+
+# Install the downloaded packages
+echo "Installing Pantheon Files..."
+cd ~/.config/dconf/MacUbuntu && sudo apt install -y ./*${DEBIAN_ARCH}.deb || {
+    echo "Warning: Could not install Pantheon Files packages"
+}
+
+wget -q https://github.com/M-Rick/MacUbuntu/raw/main/XFCE4/io.elementary.files.desktop
+mv ~/io.elementary.files.desktop ~/.local/share/applications/
 
 
 # Create GTK3 CSS
@@ -1166,6 +1206,10 @@ fi
 if ! grep -q "export UBUNTU_MENUPROXY" ~/.bashrc; then
     echo "export UBUNTU_MENUPROXY=1" >> ~/.bashrc
 fi
+
+update-icon-caches ~/.local/share/icons/Yaru
+chmod +x ~/.local/share/applications/*.desktop
+update-desktop-database ~/.local/share/applications/
 
 rm -f ~/.config/dconf/MacUbuntu/*.zip
 
