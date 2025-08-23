@@ -1,7 +1,7 @@
 #! /bin/sh
 
 ## MacUbuntu - Ubuntu with a macOS global menu
-## Works only in X11 until XFCE4 and appmenue are ported under Wayland
+## Works only in X11 until XFCE4 and appmenu are ported under Wayland
 ## Ubuntu 22.04 and higher Vanilla version
 ## https://github.com/M-Rick/MacUbuntu
 
